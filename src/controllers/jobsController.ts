@@ -1,27 +1,29 @@
 import { Request, Response } from 'express'
-import { Company } from '../models'
+import { Job } from '../models'
 
-const companiesController = {
+const jobsController = {
+    // GET /jobs
     index: async (req: Request, res: Response) => {
         try {
-            const companies = await Company.findAll()
-            return res.json(companies)
+            const jobs = await Job.findAll({ include: 'company' })
+            return res.json(jobs)
         } catch (err) {
             if (err instanceof Error) {
-								return res.status(400).json({ message: err.message })
+				return res.status(400).json({ message: err.message })
             }
         }
     },
+    // POST /jobs
     save: async (req: Request, res: Response) => {
-        const { name, bio, website, email } = req.body
+        const { title, description, limitDate, companyId } = req.body
         try {
-            const company = await Company.create({
-                name,
-                bio,
-                website,
-                email,
+            const job = await Job.create({
+                title,
+                description,
+                limitDate,
+                companyId,
             })
-            return res.status(201).json(company)
+            return res.status(201).json(job)
         } catch (err) {
             if (err instanceof Error) {
 				return res.status(400).json({ message: err.message })
@@ -31,8 +33,8 @@ const companiesController = {
     show: async (req: Request, res: Response) => {
         const { id } = req.params
         try {
-            const company = await Company.findByPk(id, { include: 'jobs' })
-            return res.json(company)
+		    const job = await Job.findByPk(id, { include: 'company' })
+		    return res.json(job)
         } catch (err) {
             if (err instanceof Error) {
 				return res.status(400).json({ message: err.message })
@@ -41,18 +43,18 @@ const companiesController = {
     },
     update: async (req: Request, res: Response) => {
         const { id } = req.params
-        const { name, bio, website, email } = req.body
+        const { title, description, limitDate, companyId } = req.body
         try {
-            const [affectedRows, companies] = await Company.update({
-                name,
-                bio,
-                website,
-                email,
+            const [affectedRows, jobs] = await Job.update({
+                title,
+                description,
+                limitDate,
+                companyId,
             }, {
                 where: { id },
                 returning: true
             })
-            return res.json(companies[0])
+            return res.json(jobs[0])
         } catch (err) {
             if (err instanceof Error) {
 				return res.status(400).json({ message: err.message })
@@ -62,8 +64,8 @@ const companiesController = {
     delete: async (req: Request, res: Response) => {
         const { id } = req.params
         try {
-            await Company.destroy({
-                where: { id }
+            await Job.destroy({
+                where: { id: id }
             })
             return res.status(204).send()
         } catch (err) {
@@ -74,4 +76,4 @@ const companiesController = {
     }
 }
 
-export { companiesController }
+export { jobsController }
