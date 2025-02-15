@@ -35,7 +35,7 @@ const candidatesController = {
     show: async (req: Request, res: Response) => {
         const { id } = req.params
         try {
-            const candidate = await Candidate.findByPk(id)
+            const candidate = await Candidate.findByPk(id, { include: 'jobs' })
             return res.json(candidate)
         } catch (err) {
             if (err instanceof Error) {
