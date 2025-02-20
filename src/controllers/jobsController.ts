@@ -30,6 +30,7 @@ const jobsController = {
             }
         }
     },
+    // GET /jobs/:id
     show: async (req: Request, res: Response) => {
         const { id } = req.params
         try {
@@ -42,6 +43,7 @@ const jobsController = {
             }
         }
     },
+    // PUT /jobs/:id
     update: async (req: Request, res: Response) => {
         const { id } = req.params
         const { title, description, limitDate, companyId } = req.body
@@ -62,6 +64,7 @@ const jobsController = {
             }
         }
     },
+    // DELETE /jobs/:id
     delete: async (req: Request, res: Response) => {
         const { id } = req.params
         try {
@@ -75,6 +78,7 @@ const jobsController = {
             }
         }
     },
+    // POST /jobs/:id/addCandidate
     addCandidate: async (req: Request, res: Response) => {
         const jobId = req.params.id
         const { candidateId } = req.body
@@ -93,6 +97,7 @@ const jobsController = {
             }
         }
     },
+    // POST /jobs/:id/removeCandidate
     removeCandidate: async (req: Request, res: Response) => {
         const jobId = req.params.id
         const { candidateId } = req.body

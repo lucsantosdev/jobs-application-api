@@ -2,16 +2,18 @@ import { Request, Response } from 'express'
 import { Company } from '../models'
 
 const companiesController = {
+    // GET /companies
     index: async (req: Request, res: Response) => {
         try {
             const companies = await Company.findAll()
             return res.json(companies)
         } catch (err) {
             if (err instanceof Error) {
-								return res.status(400).json({ message: err.message })
+				return res.status(400).json({ message: err.message })
             }
         }
     },
+    // POST /companies
     save: async (req: Request, res: Response) => {
         const { name, bio, website, email } = req.body
         try {
@@ -28,6 +30,7 @@ const companiesController = {
             }
         }
     },
+    // GET /companies/:id
     show: async (req: Request, res: Response) => {
         const { id } = req.params
         try {
@@ -39,6 +42,7 @@ const companiesController = {
             }
         }
     },
+    // PUT /companies/:id
     update: async (req: Request, res: Response) => {
         const { id } = req.params
         const { name, bio, website, email } = req.body
@@ -59,6 +63,7 @@ const companiesController = {
             }
         }
     },
+    // DELETE /companies/:id
     delete: async (req: Request, res: Response) => {
         const { id } = req.params
         try {

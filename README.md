@@ -1,41 +1,46 @@
 # jobs-application-api
+> This project is a REST API simulates the backend of a Job Application.
 
-# Welcome to My Work-in-Progress! ☕
+![Project Presentation](assets/DALL·E-cover-image.webp)
 
-## Sit Down, Grab a Coffee ☕
-Hey, you made it here! That's amazing. But before diving into the (still messy) code, how about grabbing a cup of coffee and taking it easy? While you sip your favorite drink, let me tell you a bit about what's going on here.
-
----
-
-## 🚧 Under Construction...
-This project is still in development. But don't worry! I'm smashing my keyboard, debugging impossible lines, and consuming an unhealthy amount of coffee to create something unique.
-
-Want to take a sneak peek at the progress? Feel free to browse through the code, even if it's not quite *"ready for prime time"* yet.
+## 🚀 Project Description  
+This is a REST API using Sequelize and Typescript, as well as the Node.js Express framework and the PostgreSQL database. This API simulates the backend of a Job Application. In this app, candidates can register and then apply for jobs. Companies can also register and create job openings for candidates to apply for.
 
 ---
 
-## 🛠 What Will This Project Become?
-Imagine something useful, creative, and, of course, charming. Now imagine that I'm still figuring out exactly what that means. Jokes aside, this repository is aiming to become an amazing [Job Application REST API]. This is a REST API using Sequelize and Typescript, as well as the Node.js Express framework and the PostgreSQL database. This API simulates the backend of a job application. In this app, candidates can register and then apply for jobs. Companies can also register and create job openings for candidates to apply for.
+## ✨ Functionalities  
+- **Database:** Sequelize CLI configuration and table creation through migrations, seeders and their models. 
+- **Endpoints:** Separation of application logic into route files and controllers that work with REST requests (create, read, update and delete) received.
+- **Relationships in Sequelize:** Implementation and management of relationships between database table data (One-to-Many Relationships and Many-to-Many Relationships).
 
 ---
 
-## 🤔 Want to Contribute?
-Of course you do! I love ideas, suggestions, and a sprinkle of outside creativity. Just remember: the motto here is **"Code fueled by coffee and brains that take breaks."**
-
-How to contribute:
-1. Check out the open issues (if there are any).
-2. Send a creative PR—bonus points if it includes an emoji in the message.
-3. Stay tuned for updates; things change faster than a cup of coffee can cool down.
+## 🛠️ Technologies Used  
+| Technology        | Description         |  
+|--------------------|---------------------|  
+| TypeScript          | Development Language     | 
+| Node JS          | Backend Development      |  
+| Express JS          | Backend Development      |  
+| PostgreSQL          | Data Base Storage      |   
+| Postman          | API Testing     | 
 
 ---
 
-## 💬 Get in Touch
-Feel like chatting, sending a compliment, or even complaining that this README doesn't reveal much? I'm here:
+![Project Presentation](assets/postman.png)
+
+---
+
+## 📝 License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
+
+## 💬 Connect with Me
+Follow my journey and other projects on:
 - **Email:** [lucsantosdev@gmail.com](mailto:lucsantosdev@gmail.com)
 - **LinkedIn:** [lucsantosdev](https://www.linkedin.com/in/lucsantosdev)
 - **GitHub:** [lucsantosdev](https://github.com/lucsantosdev)
 
 ---
 
-## Disclaimer
-This README may contain traces of irony, questionable humor, and caffeine. **Use responsibly!**
+🧠 Je 9:23-24
